@@ -10,7 +10,11 @@ public class Estado {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private int id;
+
+    @ManyToOne                                          //Muchos Estados a un pais
+    @JoinColumn (name = "id_pais")                      //Define una columna llamada id_pais en la tabla estado, y ahí se guarda el id del pais de cada estado.
     private Pais pais;
+
     private String nombre;
 
     //Constructor
